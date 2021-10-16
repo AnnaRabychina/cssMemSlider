@@ -1,1 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Helvetica", Arial, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+h1 {
+  padding: 1rem;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.slider-container {
+  margin: 0 auto;
+  width:50vw;
+  background-color: #030303;
+}
+
+input {
+  display: none;
+}
+ 
+.slider { 
+  margin: 0 auto;
+  overflow: hidden;
+  width: 80%;
+}
+  
+.slides {
+  width: 100%;
+  margin-top: 5em;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+  
+.slide-img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+}
+
+.slider-bottom {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+ }
+
+.slider-labels {
+  display: flex;
+  overflow: hidden;
+  color:#ffffff;
+  width: 70%;
+}
+
+.slider-text {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.slider-pagination {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+ }   
+
+.slider-bullet {
+  background-color: #3e52c4;
+  border: 3px solid #3e52c4;
+  border-radius: 50%;
+  cursor: pointer;
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  transition: all 0.5s;
+  }
+
+.slider-bullet:hover{
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+#slider-radio1:checked ~ .slider .slides img:nth-of-type(1) {
+  transform: translateX(0);
+}
+
+#slider-radio2:checked ~ .slider .slides img:nth-of-type(2) {
+  transform: translateX(-100%);
+} 
+
+#slider-radio3:checked ~ .slider .slides img:nth-of-type(3) {
+  transform: translateX(-200%);
+}
+
+#slider-radio4:checked ~ .slider .slides img:nth-of-type(4){
+  transform: translateX(-300%);
+}
+
+#slider-radio1:checked ~ .slider .slider-bottom .slider-labels h2:nth-of-type(1),
+#slider-radio2:checked ~ .slider .slider-bottom .slider-labels h2:nth-of-type(2),
+#slider-radio3:checked ~ .slider .slider-bottom .slider-labels h2:nth-of-type(3),
+#slider-radio4:checked ~ .slider .slider-bottom .slider-labels h2:nth-of-type(4) {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+#slider-radio1:checked ~ .slider .slider-bottom .slider-pagination #dot1, 
+#slider-radio2:checked ~ .slider .slider-bottom .slider-pagination #dot2,
+#slider-radio3:checked ~ .slider .slider-bottom .slider-pagination #dot3,
+#slider-radio4:checked ~ .slider .slider-bottom .slider-pagination #dot4 {
+  background-color: #030303;
+}
 
