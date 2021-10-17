@@ -3,7 +3,6 @@
 }
   
 body {
-  max-height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Roboto", "Helvetica", Arial, sans-serif;
@@ -22,7 +21,8 @@ h2 {
 
 .slider-container {
   margin: 0 auto;
-  width:50vw;
+  width: 50vw;
+  height: 75vh;
   background-color: #030303;
 }
 
@@ -33,12 +33,12 @@ input {
 .slider { 
   margin: 0 auto;
   overflow: hidden;
-  width: 80%;
+  width: 90%;
 }
   
 .slides {
   width: 100%;
-  margin-top: 5em;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   padding: 0;
@@ -55,7 +55,7 @@ input {
 }
 
 .slider-bottom {
-  margin: 2em 0;
+  margin: 1.5em 0;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -63,6 +63,7 @@ input {
 
 .slider-labels {
   display: flex;
+  justify-content: flex-start;
   overflow: hidden;
   color:#ffffff;
   width: 70%;
@@ -75,30 +76,28 @@ input {
 
 @keyframes text {
   0% {
-      transform: translateX(100%);
-      opacity: 0;
+    transform: translateX(100%);
+    opacity: 0;
   }
 
   100% {
-      transform: translateX(0);
-      opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
   }
 }
 
-
 .slider-pagination {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 25%;
  }   
 
-.slider-bullet-wrapper{
-  height: 2rem;
-  width: 2rem;
-}
+.slider-bullet-label,
+.slider-labels {
+  padding: 0.5rem;
+}  
 
 .slider-bullet-label {
-  padding: 1rem;
   cursor: pointer;
   transition: all 0.4s ease;
 }  
@@ -108,15 +107,15 @@ input {
   border: 0.2rem solid #3e52c4;
   border-radius: 50%;
   display: block;
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 1rem;
+  width: 1rem;
   transition: all 0.4s ease;
 }
 
-  .slider-bullet-label:hover .slider-bullet-dot{
-    background-color: #ffffff;
-    border-color: #ffffff;
-  }  
+.slider-bullet-label:hover .slider-bullet-dot{
+  background-color: #ffffff;
+  border-color: #ffffff;
+}  
   
  #slider-radio1:checked ~ .slider .slides img:nth-of-type(1) {
   transform: translateX(0);
@@ -152,3 +151,47 @@ input {
   background-color: inherit;
 }
 
+@media (max-width: 1000px) {
+  .slider-container {
+    width: 80vw;
+    height: 80vh;
+  }
+  
+  h1 {
+    padding: 0.5rem;
+ }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .slider-container {
+    width: 90vw;
+    height: 75vh;
+  }
+  
+  body {
+    font-size: 0.8rem;
+  }
+
+  .slider-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slider-labels,
+  .slider-pagination {
+    width: 100%;
+  }
+
+  .slider-pagination{
+    justify-content: center;
+    order: 1;
+  }
+
+  .slider-bullet-dot{
+    height: 1rem;
+    width: 1rem;
+  }
+  .slider-labels {
+    order: 2;
+  }
+}
