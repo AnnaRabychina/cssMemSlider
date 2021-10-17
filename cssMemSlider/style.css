@@ -22,7 +22,7 @@ h2 {
 .slider-container {
   margin: 0 auto;
   width: 50vw;
-  height: 75vh;
+  height: 85vh;
   background-color: #030303;
 }
 
@@ -94,7 +94,7 @@ input {
 
 .slider-bullet-label,
 .slider-labels {
-  padding: 0.5rem;
+  padding: 1rem 0.5rem;
 }  
 
 .slider-bullet-label {
